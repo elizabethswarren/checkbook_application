@@ -41,7 +41,7 @@ def debit():
 
         with open('banking_info.txt', 'r') as f:
             lines = f.readlines()
-            print(f'Your balance is {round(float(lines[0]), 2)}')
+            print(f'Your balance is {round(float(lines[0]), 2)}\n')
 
     else:
         with open('banking_info.txt', 'w') as f:
@@ -56,7 +56,7 @@ def debit():
 
         with open('banking_info.txt', 'r') as f:
             lines = f.readlines()
-            print(f'Your balance is {round(float(lines[0]), 2)}')
+            print(f'Your balance is {round(float(lines[0]), 2)}\n')
     
 
 
@@ -100,16 +100,19 @@ def credit():
             lines = f.readlines()
             print(f'Your balance is {round(float(lines[0]), 2)}')
 
+def exit():
+    print('\nThank you for choosing Gringotts Bank. \nHave a nice day.\n')
 
 
-print('Welcome to Gringotts Online Checkbook.\nProudly serving (coding) Wizards since 1474.\n')
-print('How can we help you today?\n')
+
+print('\nWelcome to Gringotts Online Checkbook.\nProudly serving (coding) Wizards since 1474.\n')
+print('How can we help you today?')
           
 
 user_prompt = ''
 
 while user_prompt != '4':
-    user_prompt = input('Menu Options:\n1 View Current Balance\n2 Make a withdrawal\n3 Make a deposit\n4 Exit\nEnter your selection here: ')
+    user_prompt = input('\nMenu Options:\n1 View Current Balance\n2 Make a withdrawal\n3 Make a deposit\n4 Exit\n\nEnter your selection here: ')
     if user_prompt == '1':
         view_balance()
     elif user_prompt == '2':
@@ -117,7 +120,7 @@ while user_prompt != '4':
     elif user_prompt == '3':
         credit()
     elif user_prompt == '4':
-        print('\nThank you for choosing Gringotts Bank.\nHave a nice day.')
+        exit()
         break
     else:
         print('\nInvalid selection. Please choose an option from the menu.')
